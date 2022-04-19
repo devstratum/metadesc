@@ -1,6 +1,6 @@
 /**
  * @package         Metadesc Component
- * @version         0.84
+ * @version         0.95
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function metadescUpdate(data) {
-        if (data.length !== 0) {
+        if (data.length !== 0 && data.description) {
             let description = String(data.description);
 
             let metadesc_row = document.getElementById('metadesc_' + object_id);
@@ -77,6 +77,15 @@ document.addEventListener('DOMContentLoaded', function() {
             metadesc_description.classList.remove('hidden');
             metadesc_description.classList.add('update');
             metadesc_description.querySelector('.text').textContent = description;
+        }
+
+        if (data.length !== 0 && data.checkout) {
+            let metadesc_row = document.getElementById('metadesc_' + object_id);
+            let metadesc_button = metadesc_row.querySelector('.metadesc-button');
+            let metadesc_cheockout = metadesc_row.querySelector('.metadesc-cheockout');
+
+            metadesc_button.classList.add('hidden');
+            metadesc_cheockout.classList.remove('hidden');
         }
     }
 
@@ -98,14 +107,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 modal_progress.classList.add('active');
             },
             onSuccess: function(response) {
-                console.log(JSON.parse(response));
-
                 let data = JSON.parse(response);
                 metadescAlert(data.message);
                 metadescUpdate(data.data);
             },
             onError: function() {
-                console.log('error');
+                console.log('ajax error');
             },
             onComplete: function() {
                 button_apply.disabled = false;

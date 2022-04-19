@@ -1,6 +1,6 @@
 /**
  * @package         Metadesc Component
- * @version         0.84
+ * @version         0.95
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -35,6 +35,8 @@
     display: none;
 }
 
+.metadesc-cheockout.hidden,
+.metadesc-button.hidden,
 .metadesc-description.hidden {
     display: none;
 }
