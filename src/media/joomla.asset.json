@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
   "name": "com_metadesc",
-  "version": "4.0.0",
+  "version": "0.84",
   "description": "Metadesc Component",
   "license": "GPL-2.0-or-later",
   "assets": [

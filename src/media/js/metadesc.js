@@ -1,12 +1,13 @@
 /**
  * @package         Metadesc Component
- * @version         0.52
+ * @version         0.84
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
  * @license         GNU General Public License v2.0
  * @report          https://github.com/devstratum/metadesc/issues
  */
+
 document.addEventListener('DOMContentLoaded', function() {
     let modal_metadesc = document.getElementById('modal-metadesc');
     let metadescModal = new bootstrap.Modal(modal_metadesc, {});
@@ -66,10 +67,14 @@ document.addEventListener('DOMContentLoaded', function() {
             let description = String(data.description);
 
             let metadesc_row = document.getElementById('metadesc_' + object_id);
+            let metadesc_badge = metadesc_row.querySelector('.metadesc-badge');
             let metadesc_count = metadesc_row.querySelector('.metadesc-count');
             let metadesc_description = metadesc_row.querySelector('.metadesc-description');
 
             metadesc_count.textContent = String(description.length);
+            metadesc_badge.classList.remove('bg-danger');
+            metadesc_badge.classList.add('bg-success');
+            metadesc_description.classList.remove('hidden');
             metadesc_description.classList.add('update');
             metadesc_description.querySelector('.text').textContent = description;
         }
