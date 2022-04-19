@@ -1,4 +1,13 @@
 <?php
+/**
+ * @package         Metadesc Component
+ * @version         0.84
+ * @author          Sergey Osipov <info@devstratum.ru>
+ * @website         https://devstratum.ru
+ * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
+ * @license         GNU General Public License v2.0
+ * @report          https://github.com/devstratum/metadesc/issues
+ */
 
 defined('_JEXEC') or die;
 
