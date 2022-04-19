@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Metadesc Component
- * @version         0.52
+ * @version         0.84
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -65,8 +65,21 @@ class MetadescController extends BaseController
         $description = $app->input->getString('description');
 
         if ($id && $description) {
-            $message = ['type' => 'success', 'text' => 'Update: Data!'];
-            $response = ['id' => $id, 'description' => $description];
+            /** @var \Devstratum\Component\Metadesc\Administrator\Model\AitemModel $model */
+            $model = $app->bootComponent('com_metadesc')->getMVCFactory()->createModel('Aitem', 'Administrator', []);
+            $data = $model->getItem($id);
+
+            $data->metadesc = $description;
+
+            $result = $model->save($data);
+
+            if ($result) {
+                $message = ['type' => 'success', 'text' => 'Update: Data!'];
+                $response = ['id' => $id, 'description' => $description];
+            } else {
+                $message = ['type' => 'warning', 'text' => 'Warning: DB problem!'];
+            }
+
         } else {
             $message = ['type' => 'danger', 'text' => 'Error: Data!'];
         }
@@ -89,8 +102,21 @@ class MetadescController extends BaseController
         $description = $app->input->getString('description');
 
         if ($id && $description) {
-            $message = ['type' => 'success', 'text' => 'Update: Data!'];
-            $response = ['id' => $id, 'description' => $description];
+            /** @var \Devstratum\Component\Metadesc\Administrator\Model\CitemModel $model */
+            $model = $app->bootComponent('com_metadesc')->getMVCFactory()->createModel('Citem', 'Administrator', []);
+            $data = $model->getItem($id);
+
+            $data->metadesc = $description;
+
+            $result = $model->save($data);
+
+            if ($result) {
+                $message = ['type' => 'success', 'text' => 'Update: Data!'];
+                $response = ['id' => $id, 'description' => $description];
+            } else {
+                $message = ['type' => 'warning', 'text' => 'Warning: DB problem!'];
+            }
+
         } else {
             $message = ['type' => 'danger', 'text' => 'Error: Data!'];
         }

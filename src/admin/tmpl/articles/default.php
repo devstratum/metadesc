@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Metadesc Component
- * @version         0.52
+ * @version         0.84
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -122,19 +122,16 @@ Text::script('COM_METADESC_FIELD_DESCRIPTION_COUNT');
                                         <div class="metadesc-control__item">
                                             <?php $badge_color = $this->escape($item->metadesc) ? 'bg-success' : 'bg-danger'; ?>
                                             <?php $desc_count = mb_strlen($this->escape($item->metadesc)); ?>
-                                            <span class="badge <?php echo $badge_color; ?>"><?php echo Text::_('COM_METADESC_HEADING_DESCRIPTION'); ?></span>
-                                            <?php if ($this->escape($item->metadesc)): ?>
-                                                <span class="badge bg-info metadesc-count"><?php echo $desc_count; ?></span>
-                                            <?php endif; ?>
+                                            <span class="metadesc-badge badge <?php echo $badge_color; ?>"><?php echo Text::_('COM_METADESC_HEADING_DESCRIPTION'); ?></span>
+                                            <span class="metadesc-count badge bg-info"><?php echo $desc_count; ?></span>
                                         </div>
                                     </div>
 
-                                    <?php if ($this->escape($item->metadesc)): ?>
-                                        <div class="metadesc-description">
-                                            <span class="icon icon-check-circle"></span>
-                                            <span class="text"><?php echo $this->escape($item->metadesc); ?></span>
-                                        </div>
-                                    <?php endif; ?>
+                                    <?php $this->escape($item->metadesc) ? $class_descr = '' : $class_descr = ' hidden'; ?>
+                                    <div class="metadesc-description<?php echo $class_descr; ?>">
+                                        <span class="icon icon-check-circle"></span>
+                                        <span class="text"><?php echo $this->escape($item->metadesc); ?></span>
+                                    </div>
                                 </td>
                                 <td class="small d-none d-md-table-cell text-center">
                                     <?php if ((int) $item->author_id != 0) : ?>
