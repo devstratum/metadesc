@@ -7,7 +7,7 @@
 	<license>GNU General Public License v2.0</license>
 	<authorEmail>info@devstratum.ru</authorEmail>
 	<authorUrl>https://devstratum.ru</authorUrl>
-	<version>0.52</version>
+	<version>0.84</version>
 	<description>COM_METADESC_DESCRIPTION</description>
     <namespace path="src">Devstratum\Component\Metadesc</namespace>
     <administration>
