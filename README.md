@@ -1,3 +1,3 @@
 # Metadesc
 
-Meta description editor component for Joomla CMS
+Meta description tags editing component for Joomla CMS
