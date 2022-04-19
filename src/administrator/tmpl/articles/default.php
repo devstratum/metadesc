@@ -170,7 +170,7 @@ Text::script('COM_METADESC_FIELD_DESCRIPTION_COUNT');
                             [
                                 'title'  => Text::_('COM_METADESC_EDIT_TITLE'),
                             ],
-                            LayoutHelper::render('components.metadesc.admin.form_metadata', $this)
+                            LayoutHelper::render('components.metadesc.administrator.form_metadata', $this)
                         ); ?>
                     <?php endif; ?>
 
