@@ -4,13 +4,13 @@ Meta description tags editing component for Joomla CMS
 
 ## Features
 
-* Meta tags description of Articles and Categories
+* Articles and Categories
 * Ajax support
-* Only for Joomla 4 CMS
+* Joomla 4 CMS
 
 ## Install
 
-Standart install in Joomla CMS - Upload Component File - **com_metadesc.zip**
+Standart install in Joomla CMS - Upload Component archive file - **com_metadesc.zip**
 
 ## Info
 
