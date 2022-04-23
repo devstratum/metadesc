@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Metadesc Component
- * @version         0.95
+ * @version         1.00
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -39,6 +39,7 @@ class CategoriesModel extends ListModel
                 'author_id', 'a.created_user_id',
                 'category_id', 'a.parent_id',
                 'language', 'a.language',
+                'published', 'a.published',
             );
         }
 
@@ -75,6 +76,7 @@ class CategoriesModel extends ListModel
                     $db->quoteName('a.created_user_id', 'author_id'),
                     $db->quoteName('a.parent_id', 'category_id'),
                     $db->quoteName('a.language'),
+                    $db->quoteName('a.published'),
                 ]
             )
         );
@@ -97,6 +99,17 @@ class CategoriesModel extends ListModel
         $extension = 'com_content';
         $query->where($db->quoteName('a.extension') . ' = :extension')
             ->bind(':extension', $extension);
+
+        // Filter by published state
+        $published = (string) $this->getState('filter.published');
+
+        if (is_numeric($published)) {
+            $state = (int) $published;
+            $query->where($db->quoteName('a.published') . ' = :published')
+                ->bind(':published', $state, ParameterType::INTEGER);
+        } elseif ($published === '') {
+            $query->whereIn($db->quoteName('a.published'), [0, 1]);
+        }
 
         // Filter by search in title
         $search = $this->getState('filter.search');

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Metadesc Component
- * @version         0.95
+ * @version         1.00
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -59,6 +59,9 @@ Text::script('COM_METADESC_FIELD_DESCRIPTION_COUNT');
                         </caption>
                         <thead>
                         <tr>
+                            <th scope="col" class="w-1 d-none d-sm-table-cell text-center">
+                                <?php echo HTMLHelper::_('searchtools.sort', 'JSTATUS', 'a.state', $listDirn, $listOrder); ?>
+                            </th>
                             <th scope="col">
                                 <?php echo HTMLHelper::_('searchtools.sort', 'JGLOBAL_TITLE', 'a.title', $listDirn, $listOrder); ?>
                             </th>
@@ -81,6 +84,9 @@ Text::script('COM_METADESC_FIELD_DESCRIPTION_COUNT');
                         <tbody>
                         <?php foreach ($this->items as $i => $item) : ?>
                             <tr class="row<?php echo $i % 2; ?>" id="metadesc_<?php echo (int) $item->id; ?>">
+                                <td class="d-none d-sm-table-cell text-center">
+                                    <?php echo HTMLHelper::_('jgrid.published', $item->published, $i, 'articles.', false); ?>
+                                </td>
                                 <td>
                                     <?php if ($item->checked_out) : ?>
                                         <?php echo HTMLHelper::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'articles.', false); ?>
