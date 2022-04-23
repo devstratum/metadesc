@@ -14,7 +14,7 @@ Standart install in Joomla CMS - Upload Component archive file - **com_metadesc.
 
 ## Info
 
-Version: 0.95  
+Version: 1.00 
 License: GNU GPL v2.0  
 Author: Sergey Osipov  
 Website: https://devstratum.ru  
