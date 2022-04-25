@@ -11,6 +11,8 @@ Meta description tags editing component for Joomla CMS
 
 ## Install
 
+[See and go to Releases](https://github.com/devstratum/metadesc/releases)
+
 Standart install in Joomla CMS - Upload Component archive file - **com_metadesc.zip**
 
 ## Usage
