@@ -1,7 +1,7 @@
 <?php
 /**
- * @package         Metadesc Component
- * @version         0.95
+ * @package         Metadesc
+ * @version         1.12
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -23,11 +23,30 @@ use Joomla\CMS\Log\Log;
 
 class com_metadescInstallerScript
 {
+    /**
+     * Minimum PHP version required to install the extension
+     *
+     * @var  string
+     */
 	protected $minimumPhp = '7.2';
 
+    /**
+     * Minimum Joomla version required to install the extension
+     *
+     * @var  string
+     */
 	protected $minimumJoomla = '4.1.0';
 
-	public function preflight()
+    /**
+     * Runs right before any installation action
+     *
+     * @param   string            $type    Type of PostFlight action. Possible values are:
+     * @param   InstallerAdapter  $parent  Parent object calling object.
+     * @throws
+     *
+     * @return  boolean     True on success. False on failure
+     */
+	public function preflight($type, $parent)
 	{
 		// Check old Joomla!
 		if (!class_exists('Joomla\CMS\Version')) {
@@ -37,7 +56,7 @@ class com_metadescInstallerScript
 			return false;
 		}
 
-		$app      = Factory::getApplication();
+		$app = Factory::getApplication();
 		$jversion = new Version();
 
 		// Check PHP
@@ -58,19 +77,54 @@ class com_metadescInstallerScript
 
 		return true;
 	}
-    
+
+    /**
+     * Runs right after any installation action
+     *
+     * @param   string            $type    Type of PostFlight action. Possible values are:
+     * @param   InstallerAdapter  $parent  Parent object calling object.
+     * @throws
+     *
+     * @return  boolean     True on success. False on failure
+     */
 	public function postflight($type, $parent)
 	{
 		// Parse layouts
 		$this->parseLayouts($parent->getParent()->getManifest()->layouts, $parent->getParent());
+        
+        return true;
 	}
 
+    /**
+     * This method is called after extension is uninstalled
+     *
+     * @param   InstallerAdapter  $parent  Parent object calling object.
+     * @throws
+     *
+     * @return  boolean     True on success. False on failure
+     */
+    public function uninstall($parent)
+	{
+		// Remove layouts
+		$this->removeLayouts($parent->getParent()->getManifest()->layouts);
+        
+        return true;
+	}
+
+    /**
+     * Method to parse through a layout element of the installation manifest and take appropriate action
+     *
+     * @param   SimpleXMLElement  $element    The XML node to process.
+     * @param   Installer         $installer  Installer calling object.
+     *
+     * @return  boolean     True on success. False on failure
+     */
 	public function parseLayouts(SimpleXMLElement $element, $installer)
 	{
 		if (!$element || !count($element->children())) return false;
 
 		// Get destination
-		$folder      = ((string) $element->attributes()->destination) ? '/' . $element->attributes()->destination : null;
+		$folder = ((string) $element->attributes()->destination) ? '/' . $element->attributes()->destination : null;
 		$destination = Path::clean(JPATH_ROOT . '/layouts' . $folder);
 
 		// Get source
@@ -102,12 +156,13 @@ class com_metadescInstallerScript
 		return $installer->copyFiles($copyFiles);
 	}
 
-	public function uninstall($parent)
-	{
-		// Remove layouts
-		$this->removeLayouts($parent->getParent()->getManifest()->layouts);
-	}
-
+    /**
+     * Method to parse through a layouts element of the installation manifest and remove the files that were installed
+     *
+     * @param   SimpleXMLElement  $element  The XML node to process.
+     *
+     * @return  boolean     True on success, False on failure.
+     */
 	protected function removeLayouts(SimpleXMLElement $element)
 	{
 		if (!$element || !count($element->children())) return false;

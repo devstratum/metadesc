@@ -1,7 +1,7 @@
 <?php
 /**
- * @package         Metadesc Component
- * @version         1.00
+ * @package         Metadesc
+ * @version         1.12
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -65,14 +65,14 @@ Text::script('COM_METADESC_FIELD_DESCRIPTION_COUNT');
                             <th scope="col">
                                 <?php echo HTMLHelper::_('searchtools.sort', 'JGLOBAL_TITLE', 'a.title', $listDirn, $listOrder); ?>
                             </th>
+                            <?php if (Multilanguage::isEnabled()) : ?>
+                            <th scope="col" class="w-10 d-none d-md-table-cell text-center">
+                                <?php echo Text::_('JGRID_HEADING_LANGUAGE'); ?>
+                            </th>
+                            <?php endif; ?>
                             <th scope="col" class="w-10 d-none d-md-table-cell text-center">
                                 <?php echo HTMLHelper::_('searchtools.sort', 'JAUTHOR', 'a.created_user_id', $listDirn, $listOrder); ?>
                             </th>
-                            <?php if (Multilanguage::isEnabled()) : ?>
-                            <th scope="col" class="w-10 d-none d-md-table-cell text-center">
-                                <?php echo HTMLHelper::_('searchtools.sort', 'JGRID_HEADING_LANGUAGE', 'language', $listDirn, $listOrder); ?>
-                            </th>
-                            <?php endif; ?>
                             <th scope="col" class="w-10 d-none d-md-table-cell text-center">
                                 <?php echo HTMLHelper::_('searchtools.sort', 'COM_METADESC_HEADING_DATE_CREATED', 'a.created_time', $listDirn, $listOrder); ?>
                             </th>
@@ -139,6 +139,11 @@ Text::script('COM_METADESC_FIELD_DESCRIPTION_COUNT');
                                         <span class="text"><?php echo $this->escape($item->metadesc); ?></span>
                                     </div>
                                 </td>
+                                <?php if (Multilanguage::isEnabled()) : ?>
+                                <td class="small d-none d-md-table-cell text-center">
+                                    <span class="text"><?php echo $this->escape($item->language); ?></span>
+                                </td>
+                                <?php endif; ?>
                                 <td class="small d-none d-md-table-cell text-center">
                                     <?php if ((int) $item->author_id != 0) : ?>
                                         <?php echo $this->escape($item->author_name); ?>
@@ -146,13 +151,6 @@ Text::script('COM_METADESC_FIELD_DESCRIPTION_COUNT');
                                         <?php echo Text::_('JNONE'); ?>
                                     <?php endif; ?>
                                 </td>
-
-                                <?php if (Multilanguage::isEnabled()) : ?>
-                                <td class="small d-none d-md-table-cell text-center">
-                                    <?php echo LayoutHelper::render('joomla.content.language', $item); ?>
-                                </td>
-                                <?php endif; ?>
-
                                 <td class="small d-none d-md-table-cell text-center">
                                     <?php
                                     $date = $item->created;

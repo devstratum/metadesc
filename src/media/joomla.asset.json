@@ -1,19 +1,19 @@
 {
   "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
   "name": "com_metadesc",
-  "version": "0.95",
+  "version": "1.12",
   "description": "Metadesc Component",
-  "license": "GPL-2.0-or-later",
+  "license": "GNU GPL v2.0",
   "assets": [
     {
       "name": "metadesc.main",
       "type": "style",
-      "uri": "com_metadesc/metadesc.min.css"
+      "uri": "com_metadesc/metadesc.css"
     },
     {
       "name": "metadesc.main",
       "type": "script",
-      "uri": "com_metadesc/metadesc.min.js",
+      "uri": "com_metadesc/metadesc.js",
       "attributes": {
         "defer": true
       }

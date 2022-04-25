@@ -1,6 +1,6 @@
 /**
- * @package         Metadesc Component
- * @version         0.95
+ * @package         Metadesc
+ * @version         1.12
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -59,7 +59,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function metadescAlert(message) {
-        modal_alert.innerHTML = '<div class="alert alert-' + message.type + '">' + message.text + '</div>';
+        let icon = '';
+        switch (message.type) {
+            case 'success':
+                icon = '<span class="icon icon-check-circle"></span>';
+                break;
+            case 'warning':
+                icon = '<span class="icon icon-warning"></span>';
+                break;
+            case 'danger':
+                icon = '<span class="icon icon-warning-circle"></span>';
+                break;
+        }
+        modal_alert.innerHTML = '<div class="alert alert-' + message.type + '">' + icon + '&nbsp;' + message.text + '</div>';
     }
 
     function metadescUpdate(data) {
