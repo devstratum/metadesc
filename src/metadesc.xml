@@ -2,12 +2,12 @@
 <extension type="component" method="upgrade" version="4.0">
 	<name>COM_METADESC</name>
 	<author>Sergey Osipov</author>
-	<creationDate>25.04.2022</creationDate>
+	<creationDate>28.04.2022</creationDate>
 	<copyright>Copyright (c) 2022 Sergey Osipov. All rights reserved.</copyright>
 	<license>GNU General Public License v2.0</license>
 	<authorEmail>info@devstratum.ru</authorEmail>
 	<authorUrl>https://devstratum.ru</authorUrl>
-	<version>1.12</version>
+	<version>1.12.1</version>
 	<description>COM_METADESC_DESCRIPTION</description>    
     <namespace path="src">Devstratum\Component\Metadesc</namespace>
     <scriptfile>script.php</scriptfile>
