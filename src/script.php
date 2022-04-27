@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Metadesc
- * @version         1.12
+ * @version         1.12.1
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -91,7 +91,7 @@ class com_metadescInstallerScript
 	{
 		// Parse layouts
 		$this->parseLayouts($parent->getParent()->getManifest()->layouts, $parent->getParent());
-        
+
         return true;
 	}
 
@@ -107,7 +107,7 @@ class com_metadescInstallerScript
 	{
 		// Remove layouts
 		$this->removeLayouts($parent->getParent()->getManifest()->layouts);
-        
+
         return true;
 	}
 
@@ -135,7 +135,7 @@ class com_metadescInstallerScript
 		// Prepare files
 		$copyFiles = array();
 		foreach ($element->children() as $file) {
-			
+
 			$path['src']  = Path::clean($source . '/' . $file);
 			$path['dest'] = Path::clean($destination . '/' . $file);
 
@@ -144,7 +144,7 @@ class com_metadescInstallerScript
 			if (basename($path['dest']) !== $path['dest']) {
 				$newdir = dirname($path['dest']);
 				if (!Folder::create($newdir)) {
-					Log::add(Text::sprintf('JLIB_INSTALLER_ERROR_CREATE_DIRECTORY', $newdir), Log::WARNING, 'jerror');
+					Log::add(Text::sprintf('JLIB_INSTALLER_ERROR_CREATE_FOLDER_FAILED', $newdir), Log::WARNING, 'jerror');
 
 					return false;
 				}
