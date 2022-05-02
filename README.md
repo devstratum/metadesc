@@ -31,7 +31,7 @@ Well done! Meta Description has been saved
 
 ## Info
 
-Version: 1.12  
+Version: 1.12.1  
 License: GNU GPL v2.0  
 Author: Sergey Osipov  
 Website: https://devstratum.ru  
