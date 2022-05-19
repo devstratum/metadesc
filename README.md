@@ -2,7 +2,7 @@
 
 Meta description tags editing component for Joomla CMS
 
-Component in [Joomla! Extensions Directory™](https://extensions.joomla.org/extension/metadesc/)
+Сomponent is available in [Joomla! Extensions Directory™](https://extensions.joomla.org/extension/metadesc/)
 
 ## Features
 
