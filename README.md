@@ -6,7 +6,7 @@ Meta description tags editing component for Joomla CMS
 
 ## Features
 
-* Descriptions for Articles and Categories
+* Meta Descriptions for Menu Items, Articles and Categories
 * Edit form Ajax support
 * Joomla 4 CMS
 * Language: English | Russian
@@ -44,7 +44,7 @@ Well done! Meta Description has been saved
 
 ## Info
 
-Version: 1.12.1  
+Version: 1.54.2  
 License: GNU GPL v2.0  
 Author: Sergey Osipov  
 Website: https://devstratum.ru  
