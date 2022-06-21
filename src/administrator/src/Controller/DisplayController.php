@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Metadesc
- * @version         1.12
+ * @version         1.54.2
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -25,7 +25,7 @@ class DisplayController extends BaseController
      *
      * @var    string
      */
-    protected $default_view = 'articles';
+    protected $default_view = 'menus';
 
     /**
      * Method to display a view

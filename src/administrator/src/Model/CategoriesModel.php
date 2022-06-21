@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Metadesc
- * @version         1.12
+ * @version         1.54.2
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -59,6 +59,7 @@ class CategoriesModel extends ListModel
         // Create a new query object
         $db = $this->getDbo();
         $query = $db->getQuery(true);
+        $extension = 'com_content';
 
         // Select the required fields from the table
         $query->select(
@@ -82,6 +83,8 @@ class CategoriesModel extends ListModel
         );
 
         $query->from($db->quoteName('#__categories', 'a'));
+
+        // Join over authors
         $query->select($db->quoteName('ua.name', 'author_name'))
             ->join(
                 'LEFT',
@@ -89,6 +92,7 @@ class CategoriesModel extends ListModel
                 $db->quoteName('ua.id') . ' = ' . $db->quoteName('a.created_user_id')
             );
 
+        // Join over categories
         $query->select($db->quoteName('ca.title', 'category_title'))
             ->join(
                 'LEFT',
@@ -96,7 +100,6 @@ class CategoriesModel extends ListModel
                 $db->quoteName('ca.id') . ' = ' . $db->quoteName('a.parent_id')
             );
 
-        $extension = 'com_content';
         $query->where($db->quoteName('a.extension') . ' = :extension')
             ->bind(':extension', $extension);
 

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Metadesc
- * @version         1.12
+ * @version         1.54.2
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -20,6 +20,7 @@ use Joomla\CMS\Toolbar\Toolbar;
 use Joomla\CMS\Toolbar\ToolbarHelper;
 use Joomla\CMS\MVC\View\GenericDataException;
 use Joomla\CMS\Language\Multilanguage;
+use Joomla\CMS\Layout\LayoutHelper;
 
 /**
  * View class for a list of Categories
@@ -94,6 +95,8 @@ class HtmlView extends BaseHtmlView
         $this->addToolbar();
 
         parent::display($tpl);
+
+        print $this->addFooter();
     }
 
     /**
@@ -113,5 +116,16 @@ class HtmlView extends BaseHtmlView
         if ($user->authorise('core.admin', 'com_metadesc') || $user->authorise('core.options', 'com_metadesc')) {
             $toolbar->preferences('com_metadesc');
         }
+    }
+
+    /**
+     * Add the footer
+     *
+     * @return  mixed
+     * @throws
+     */
+    protected function addFooter() {
+        $output = LayoutHelper::render('components.metadesc.administrator.footer', $this);
+        return $output;
     }
 }

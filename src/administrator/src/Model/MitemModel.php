@@ -17,9 +17,9 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\MVC\Model\BaseDatabaseModel;
 
 /**
- * Metadesc Component Article Model
+ * Metadesc Component Menu Model
  */
-class AitemModel extends BaseDatabaseModel
+class MitemModel extends BaseDatabaseModel
 {
     /**
      * Method to get a single record
@@ -35,7 +35,7 @@ class AitemModel extends BaseDatabaseModel
         $db = $this->getDbo();
         $query = $db->getQuery(true);
         $query->select('*')
-            ->from($db->quoteName('#__content'))
+            ->from($db->quoteName('#__menu'))
             ->where($db->quoteName('id') . ' = ' . $pk);
 
         $db->setQuery($query);
@@ -58,10 +58,7 @@ class AitemModel extends BaseDatabaseModel
         $user = $app->getIdentity();
         $db = $this->getDbo();
 
-        $data->modified = date('Y-m-d H:i:s');
-        $data->modified_by = $user->id;
-
-        $result = $db->updateObject('#__content', $data, 'id');
+        $result = $db->updateObject('#__menu', $data, 'id');
 
         return $result;
     }

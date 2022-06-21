@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Metadesc
- * @version         1.12.1
+ * @version         1.54.2
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved

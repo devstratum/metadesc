@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Metadesc
- * @version         1.12
+ * @version         1.54.2
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -66,9 +66,9 @@ Text::script('COM_METADESC_FIELD_DESCRIPTION_COUNT');
                                 <?php echo HTMLHelper::_('searchtools.sort', 'JGLOBAL_TITLE', 'a.title', $listDirn, $listOrder); ?>
                             </th>
                             <?php if (Multilanguage::isEnabled()) : ?>
-                            <th scope="col" class="w-10 d-none d-md-table-cell text-center">
-                                <?php echo Text::_('JGRID_HEADING_LANGUAGE'); ?>
-                            </th>
+                                <th scope="col" class="w-10 d-none d-md-table-cell text-center">
+                                    <?php echo Text::_('JGRID_HEADING_LANGUAGE'); ?>
+                                </th>
                             <?php endif; ?>
                             <th scope="col" class="w-10 d-none d-md-table-cell text-center">
                                 <?php echo HTMLHelper::_('searchtools.sort', 'JAUTHOR', 'a.created_user_id', $listDirn, $listOrder); ?>
@@ -109,7 +109,7 @@ Text::script('COM_METADESC_FIELD_DESCRIPTION_COUNT');
                                     </div>
 
                                     <div class="metadesc-category small">
-                                        <span><?php echo Text::_('COM_METADESC_JPARENT') . ': '; ?></span>
+                                        <span><?php echo Text::_('COM_METADESC_HEADING_PARENT') . ': '; ?></span>
                                         <span class="title"><?php echo $this->escape($item->category_title); ?></span>
                                     </div>
 
@@ -140,9 +140,9 @@ Text::script('COM_METADESC_FIELD_DESCRIPTION_COUNT');
                                     </div>
                                 </td>
                                 <?php if (Multilanguage::isEnabled()) : ?>
-                                <td class="small d-none d-md-table-cell text-center">
-                                    <span class="text"><?php echo $this->escape($item->language); ?></span>
-                                </td>
+                                    <td class="small d-none d-md-table-cell text-center">
+                                        <span class="text"><?php echo $this->escape($item->language); ?></span>
+                                    </td>
                                 <?php endif; ?>
                                 <td class="small d-none d-md-table-cell text-center">
                                     <?php if ((int) $item->author_id != 0) : ?>

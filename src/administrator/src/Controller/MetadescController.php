@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Metadesc
- * @version         1.12
+ * @version         1.54.2
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -49,6 +49,50 @@ class MetadescController extends BaseController
         $result = parent::__construct($config);
 
         return $result;
+    }
+
+    /**
+     * Method action menu
+     *
+     * @throws
+     */
+    public function menu()
+    {
+        $app = Factory::getApplication();
+        $response = [];
+        $id = $app->input->getInt('id');
+        $description = $app->input->getString('description');
+
+        if ($id && $description) {
+            /** @var \Devstratum\Component\Metadesc\Administrator\Model\MitemModel $model */
+            $model = $app->bootComponent('com_metadesc')->getMVCFactory()->createModel('Mitem', 'Administrator', []);
+            $data = $model->getItem($id);
+
+            if (!$data) {
+                $message = ['type' => 'danger', 'text' => Text::_('COM_METADESC_ERROR_DATA')];
+            } else {
+                if (!$data->checked_out) {
+                    $item_params = json_decode($data->params);
+                    $item_params->{'menu-meta_description'} = $description;
+                    $data->params = json_encode($item_params);
+                    $result = $model->save($data);
+                    if ($result) {
+                        $message = ['type' => 'success', 'text' => Text::_('COM_METADESC_SUCCESS_UPDATE')];
+                        $response = ['id' => $id, 'description' => $description];
+                    } else {
+                        $message = ['type' => 'danger', 'text' => Text::_('COM_METADESC_ERROR_SAVE')];
+                    }
+                } else {
+                    $message = ['type' => 'warning', 'text' => Text::_('COM_METADESC_ERROR_CHECK')];
+                    $response = ['id' => $id, 'checkout' => true];
+                }
+            }
+
+        } else {
+            $message = ['type' => 'warning', 'text' => Text::_('COM_METADESC_ERROR_INPUT')];
+        }
+
+        $this->setResponse($response, $message);
     }
 
     /**

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Metadesc
- * @version         1.12
+ * @version         1.54.2
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -82,6 +82,8 @@ class ArticlesModel extends ListModel
         );
 
         $query->from($db->quoteName('#__content', 'a'));
+
+        // Join over authors
         $query->select($db->quoteName('ua.name', 'author_name'))
             ->join(
                 'LEFT',
@@ -89,6 +91,7 @@ class ArticlesModel extends ListModel
                 $db->quoteName('ua.id') . ' = ' . $db->quoteName('a.created_by')
             );
 
+        // Join over categories
         $query->select($db->quoteName('ca.title', 'category_title'))
             ->join(
                 'LEFT',
