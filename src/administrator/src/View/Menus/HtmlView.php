@@ -195,9 +195,9 @@ class HtmlView extends BaseHtmlView
                         $value = implode(' » ', $titleParts);
                     } else {
                         if (preg_match("/^index.php\?option=([a-zA-Z\-0-9_]*)/", $item->link, $result)) {
-                            $value = Text::sprintf('COM_MENUS_TYPE_UNEXISTING', $result[1]);
+                            $value = Text::sprintf('COM_METADESC_TYPE_UNEXISTING', $result[1]);
                         } else {
-                            $value = Text::_('COM_MENUS_TYPE_UNKNOWN');
+                            $value = Text::_('COM_METADESC_TYPE_UNKNOWN');
                         }
                     }
                     break;
