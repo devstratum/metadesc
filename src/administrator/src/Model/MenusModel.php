@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Metadesc
- * @version         1.54.2
+ * @version         1.55.0
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -59,6 +59,7 @@ class MenusModel extends ListModel
         $db = $this->getDbo();
         $query = $db->getQuery(true);
         $clientId = 0;
+        $typeLink = 'component';
 
         // Select the required fields from the table
         $query->select(
@@ -116,7 +117,10 @@ class MenusModel extends ListModel
             ]
         )
             ->bind(':clientId', $clientId, ParameterType::INTEGER);
-
+            
+        // Exclude type of link except component
+        $query->where($db->quoteName('a.type') . ' = :typeLink')
+            ->bind(':typeLink', $typeLink, ParameterType::STRING);
 
         // Filter the items over the menu id if set
         $menuType = $this->getState('filter.menutype');
