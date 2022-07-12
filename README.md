@@ -44,7 +44,7 @@ Well done! Meta Description has been saved
 
 ## Info
 
-Version: 1.54.3  
+Version: 1.55.0  
 License: GNU GPL v2.0  
 Author: Sergey Osipov  
 Website: https://devstratum.ru  
