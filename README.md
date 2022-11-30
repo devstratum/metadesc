@@ -20,6 +20,7 @@ Meta description tags editing component for Joomla CMS
 
 You can support the author's products and new projects
 
+* [Donate via QIWI](https://my.qiwi.com/Sergei-OGTEJOc8mG)
 * [Donate via CloudTips](https://pay.cloudtips.ru/p/1daecc1f)
 
 ## Install
