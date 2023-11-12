@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" method="upgrade" version="4.0">
+    <name>COM_METADESC</name>
+    <author>Sergey Osipov</author>
+    <creationDate>12.07.2022</creationDate>
+    <copyright>Copyright (c) 2022 Sergey Osipov. All rights reserved.</copyright>
+    <license>GNU General Public License v2.0</license>
+    <authorEmail>info@devstratum.ru</authorEmail>
+    <authorUrl>https://devstratum.ru</authorUrl>
+    <version>1.55.0</version>
+    <description>COM_METADESC_DESCRIPTION</description>
+    <namespace path="src">Devstratum\Component\Metadesc</namespace>
+    <scriptfile>script.php</scriptfile>
+    <administration>
+        <menu img="class:code">COM_METADESC</menu>
+        <submenu>
+            <menu link="option=com_metadesc&amp;view=menus">COM_METADESC_MENUS_MENUS</menu>
+            <menu link="option=com_metadesc&amp;view=articles">COM_METADESC_MENUS_ARTICLES</menu>
+            <menu link="option=com_metadesc&amp;view=categories">COM_METADESC_MENUS_CATEGORIES</menu>
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <folder>forms</folder>
+            <folder>services</folder>
+            <folder>src</folder>
+            <folder>tmpl</folder>
+        </files>
+        <languages folder="administrator">
+            <language tag="en-GB">language/en-GB/en-GB.com_metadesc.ini</language>
+            <language tag="en-GB">language/en-GB/en-GB.com_metadesc.sys.ini</language>
+            <language tag="ru-RU">language/ru-RU/ru-RU.com_metadesc.ini</language>
+            <language tag="ru-RU">language/ru-RU/ru-RU.com_metadesc.sys.ini</language>
+            <language tag="tr-TR">language/tr-TR/tr-TR.com_metadesc.ini</language>
+            <language tag="tr-TR">language/tr-TR/tr-TR.com_metadesc.sys.ini</language>
+        </languages>
+    </administration>
+    <media destination="com_metadesc" folder="media">
+        <filename>joomla.asset.json</filename>
+        <folder>css</folder>
+        <folder>js</folder>
+    </media>
+    <layouts destination="components/metadesc" folder="layouts">
+        <folder>administrator</folder>
+    </layouts>
+    <updateservers>
+        <server type="extension" priority="1" name="Metadesc">
+            https://devstratum.ru/files/software/metadesc-update.xml
+        </server>
+    </updateservers>
+</extension>
