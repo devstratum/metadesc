@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Metadesc
- * @version         1.54.2
+ * @version         2.0.0
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -26,25 +26,27 @@ class com_metadescInstallerScript
     /**
      * Minimum PHP version required to install the extension
      *
-     * @var  string
+     * @param   string
+     * @since   1.0.0
      */
-	protected $minimumPhp = '7.2';
+    protected $minimumPhp = '7.4';
 
     /**
      * Minimum Joomla version required to install the extension
      *
-     * @var  string
+     * @param   string
+     * @since   1.0.0
      */
-	protected $minimumJoomla = '4.1.0';
+    protected $minimumJoomla = '4.3.0';
 
     /**
      * Runs right before any installation action
      *
-     * @param   string            $type    Type of PostFlight action. Possible values are:
+     * @param   string            $type    Type of PostFlight action.
      * @param   InstallerAdapter  $parent  Parent object calling object.
      * @throws
-     *
-     * @return  boolean     True on success. False on failure
+     * @return  boolean True on success. False on failure
+     * @since   1.0.0
      */
 	public function preflight($type, $parent)
 	{
@@ -84,8 +86,8 @@ class com_metadescInstallerScript
      * @param   string            $type    Type of PostFlight action. Possible values are:
      * @param   InstallerAdapter  $parent  Parent object calling object.
      * @throws
-     *
      * @return  boolean     True on success. False on failure
+     * @since   1.0.0
      */
 	public function postflight($type, $parent)
 	{
@@ -100,8 +102,8 @@ class com_metadescInstallerScript
      *
      * @param   InstallerAdapter  $parent  Parent object calling object.
      * @throws
-     *
      * @return  boolean     True on success. False on failure
+     * @since   1.0.0
      */
     public function uninstall($parent)
 	{
@@ -116,8 +118,8 @@ class com_metadescInstallerScript
      *
      * @param   SimpleXMLElement  $element    The XML node to process.
      * @param   Installer         $installer  Installer calling object.
-     *
      * @return  boolean     True on success. False on failure
+     * @since   1.0.0
      */
 	public function parseLayouts(SimpleXMLElement $element, $installer)
 	{
@@ -160,8 +162,8 @@ class com_metadescInstallerScript
      * Method to parse through a layouts element of the installation manifest and remove the files that were installed
      *
      * @param   SimpleXMLElement  $element  The XML node to process.
-     *
      * @return  boolean     True on success, False on failure.
+     * @since   1.0.0
      */
 	protected function removeLayouts(SimpleXMLElement $element)
 	{

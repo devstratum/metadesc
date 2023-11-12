@@ -2,12 +2,12 @@
 <extension type="component" method="upgrade" version="4.0">
     <name>COM_METADESC</name>
     <author>Sergey Osipov</author>
-    <creationDate>12.07.2022</creationDate>
+    <creationDate>12.11.2023</creationDate>
     <copyright>Copyright (c) 2022 Sergey Osipov. All rights reserved.</copyright>
     <license>GNU General Public License v2.0</license>
     <authorEmail>info@devstratum.ru</authorEmail>
     <authorUrl>https://devstratum.ru</authorUrl>
-    <version>1.55.0</version>
+    <version>2.0.0</version>
     <description>COM_METADESC_DESCRIPTION</description>
     <namespace path="src">Devstratum\Component\Metadesc</namespace>
     <scriptfile>script.php</scriptfile>
@@ -27,12 +27,12 @@
             <folder>tmpl</folder>
         </files>
         <languages folder="administrator">
-            <language tag="en-GB">language/en-GB/en-GB.com_metadesc.ini</language>
-            <language tag="en-GB">language/en-GB/en-GB.com_metadesc.sys.ini</language>
-            <language tag="ru-RU">language/ru-RU/ru-RU.com_metadesc.ini</language>
-            <language tag="ru-RU">language/ru-RU/ru-RU.com_metadesc.sys.ini</language>
-            <language tag="tr-TR">language/tr-TR/tr-TR.com_metadesc.ini</language>
-            <language tag="tr-TR">language/tr-TR/tr-TR.com_metadesc.sys.ini</language>
+            <language tag="en-GB">language/en-GB/com_metadesc.ini</language>
+            <language tag="en-GB">language/en-GB/com_metadesc.sys.ini</language>
+            <language tag="ru-RU">language/ru-RU/com_metadesc.ini</language>
+            <language tag="ru-RU">language/ru-RU/com_metadesc.sys.ini</language>
+            <language tag="tr-TR">language/tr-TR/com_metadesc.ini</language>
+            <language tag="tr-TR">language/tr-TR/com_metadesc.sys.ini</language>
         </languages>
     </administration>
     <media destination="com_metadesc" folder="media">
