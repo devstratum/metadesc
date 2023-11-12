@@ -1,10 +1,10 @@
 <?php
 /**
  * @package         Metadesc
- * @version         1.54.2
+ * @version         2.0.0
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
- * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
+ * @copyright       Copyright (c) 2023 Sergey Osipov. All Rights Reserved
  * @license         GNU General Public License v2.0
  * @report          https://github.com/devstratum/metadesc/issues
  */
@@ -24,41 +24,47 @@ use Joomla\CMS\Layout\LayoutHelper;
 
 /**
  * View class for a list of Menus
+ * @since   1.0.0
  */
 class HtmlView extends BaseHtmlView
 {
     /**
      * An array of items
      *
-     * @var  array
+     * @var     array
+     * @since   1.0.0
      */
     protected $items;
 
     /**
      * The pagination object
      *
-     * @var  \Joomla\CMS\Pagination\Pagination
+     * @var     \Joomla\CMS\Pagination\Pagination
+     * @since   1.0.0
      */
     protected $pagination;
 
     /**
      * The model state
      *
-     * @var   \Joomla\CMS\Object\CMSObject
+     * @var     \Joomla\CMS\Object\CMSObject
+     * @since   1.0.0
      */
     protected $state;
 
     /**
      * Form object for search filters
      *
-     * @var  \Joomla\CMS\Form\Form
+     * @var     \Joomla\CMS\Form\Form
+     * @since   1.0.0
      */
     public $filterForm;
 
     /**
      * The active search filters
      *
-     * @var  array
+     * @var     array
+     * @since   1.0.0
      */
     public $activeFilters;
 
@@ -67,8 +73,8 @@ class HtmlView extends BaseHtmlView
      *
      * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths
      * @throws
-     *
      * @return  void
+     * @since   1.0.0
      */
     public function display($tpl = null) {
         $lang = Factory::getApplication()->getLanguage();
@@ -227,6 +233,7 @@ class HtmlView extends BaseHtmlView
      *
      * @return  void
      * @throws
+     * @since   1.0.0
      */
     protected function addToolbar() {
         $user  = Factory::getApplication()->getIdentity();
@@ -246,6 +253,7 @@ class HtmlView extends BaseHtmlView
      *
      * @return  mixed
      * @throws
+     * @since   1.0.0
      */
     protected function addFooter() {
         $output = LayoutHelper::render('components.metadesc.administrator.footer', $this);
