@@ -1,10 +1,10 @@
 <?php
 /**
  * @package         Metadesc
- * @version         1.54.2
+ * @version         2.0.0
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
- * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
+ * @copyright       Copyright (c) 2023 Sergey Osipov. All Rights Reserved
  * @license         GNU General Public License v2.0
  * @report          https://github.com/devstratum/metadesc/issues
  */
@@ -29,8 +29,8 @@ return new class implements ServiceProviderInterface
 	 * Registers the service provider with a DI container
 	 *
 	 * @param   Container  $container  The DI container
-	 *
 	 * @return  void
+     * @since   1.0.0
 	 */
 	public function register(Container $container)
 	{
