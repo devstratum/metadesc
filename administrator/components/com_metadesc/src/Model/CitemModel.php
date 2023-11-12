@@ -1,10 +1,10 @@
 <?php
 /**
  * @package         Metadesc
- * @version         1.54.2
+ * @version         2.0.0
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
- * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
+ * @copyright       Copyright (c) 2023 Sergey Osipov. All Rights Reserved
  * @license         GNU General Public License v2.0
  * @report          https://github.com/devstratum/metadesc/issues
  */
@@ -18,6 +18,7 @@ use Joomla\CMS\MVC\Model\BaseDatabaseModel;
 
 /**
  * Metadesc Component Category Model
+ * @since   1.0.0
  */
 class CitemModel extends BaseDatabaseModel
 {
@@ -25,8 +26,8 @@ class CitemModel extends BaseDatabaseModel
      * Method to get a single record
      *
      * @param   integer  $pk  The id of the primary key
-     *
      * @return  mixed  Object on success, false on failure
+     * @since   1.0.0
      */
     public function getItem($pk = null)
     {
@@ -49,8 +50,8 @@ class CitemModel extends BaseDatabaseModel
      *
      * @param   object  $data  The model data
      * @throws
-     *
      * @return  boolean  True on success
+     * @since   1.0.0
      */
     public function save($data)
     {

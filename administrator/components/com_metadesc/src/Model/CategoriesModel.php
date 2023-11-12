@@ -1,10 +1,10 @@
 <?php
 /**
  * @package         Metadesc
- * @version         1.54.2
+ * @version         2.0.0
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
- * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
+ * @copyright       Copyright (c) 2023 Sergey Osipov. All Rights Reserved
  * @license         GNU General Public License v2.0
  * @report          https://github.com/devstratum/metadesc/issues
  */
@@ -20,6 +20,7 @@ use Joomla\Utilities\ArrayHelper;
 
 /**
  * Metadesc Component Categories Model
+ * @since   1.0.0
  */
 class CategoriesModel extends ListModel
 {
@@ -28,6 +29,7 @@ class CategoriesModel extends ListModel
      *
      * @param   array  $config  An optional associative array of configuration settings
      * @throws
+     * @since   1.0.0
      */
     public function __construct($config = array())
     {
@@ -51,6 +53,7 @@ class CategoriesModel extends ListModel
      *
      * @return  mixed
      * @throws
+     * @since   1.0.0
      */
     protected function getListQuery()
     {
