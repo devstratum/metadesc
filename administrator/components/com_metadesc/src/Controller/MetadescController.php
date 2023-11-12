@@ -1,10 +1,10 @@
 <?php
 /**
  * @package         Metadesc
- * @version         1.54.2
+ * @version         2.0.0
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
- * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
+ * @copyright       Copyright (c) 2023 Sergey Osipov. All Rights Reserved
  * @license         GNU General Public License v2.0
  * @report          https://github.com/devstratum/metadesc/issues
  */
@@ -21,6 +21,7 @@ use Joomla\CMS\Language\Text;
 
 /**
  * Component Controller Ajax
+ * @since   1.0.0
  */
 class MetadescController extends BaseController
 {
@@ -29,6 +30,7 @@ class MetadescController extends BaseController
      *
      * @param   array  $config  An optional associative array of configuration settings
      * @throws
+     * @since   1.0.0
      */
     public function __construct($config = [])
     {
@@ -55,6 +57,7 @@ class MetadescController extends BaseController
      * Method action menu
      *
      * @throws
+     * @since   1.0.0
      */
     public function menu()
     {
@@ -99,6 +102,7 @@ class MetadescController extends BaseController
      * Method action article
      *
      * @throws
+     * @since   1.0.0
      */
     public function article()
     {
@@ -141,6 +145,7 @@ class MetadescController extends BaseController
      * Method action category
      *
      * @throws
+     * @since   1.0.0
      */
     public function category()
     {
@@ -182,10 +187,10 @@ class MetadescController extends BaseController
     /**
      * Method action response
      *
-     * @param array $response
-     * @param array $message
-     *
+     * @param   array $response
+     * @param   array $message
      * @throws
+     * @since   1.0.0
      */
     public function setResponse($response, $message)
     {
