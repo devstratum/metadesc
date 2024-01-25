@@ -43,9 +43,12 @@ Well done! Meta Description has been saved
 ![com_metadesc_03](https://github.com/devstratum/metadesc/blob/main/com_metadesc_03.png)
 
 ## Info
+```
+Metadesc
+Meta description tags editing component for Joomla CMS
 
-Version: 1.55.0  
-License: GNU GPL v2.0  
-Author: Sergey Osipov  
-Website: https://devstratum.ru  
-Email: info@devstratum.ru
+Version:  1.55.0
+License:  GNU GPL v2.0
+Author:   Sergey Osipov
+Website:  https://devstratum.ru
+Email:    info@devstratum.ru
