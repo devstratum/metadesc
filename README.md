@@ -8,13 +8,13 @@ Meta description tags editing component for Joomla CMS
 
 * Meta Descriptions for Menu Items, Articles and Categories
 * Edit form Ajax support
-* Joomla 4 CMS
+* Joomla 4, Joomla 5
 * Language: English | Russian | Turkish
 
 ## Requirements
 
-* Joomla 4.1.0 or higher
-* PHP 7.2 or higher
+* Joomla 4.3.0 or higher
+* PHP 7.4 or higher
 
 ## Donate
 
@@ -47,7 +47,7 @@ Well done! Meta Description has been saved
 Metadesc
 Meta description tags editing component for Joomla CMS
 
-Version:  1.55.0
+Version:  1.55.2
 License:  GNU GPL v2.0
 Author:   Sergey Osipov
 Website:  https://devstratum.ru
