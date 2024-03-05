@@ -1,6 +1,6 @@
 /**
  * @package         Metadesc
- * @version         1.54.2
+ * @version         1.55.2
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -26,6 +26,8 @@
     position: relative;
     margin-top: 8px;
     padding: 8px;
+    color: var();
+    color: var(--gray-800);
     background: var(--gray-100);
     border: 1px solid var(--gray-300);
     font-size: 90%;

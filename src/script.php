@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Metadesc
- * @version         1.54.2
+ * @version         1.55.2
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -28,14 +28,14 @@ class com_metadescInstallerScript
      *
      * @var  string
      */
-	protected $minimumPhp = '7.2';
+	protected $minimumPhp = '7.4';
 
     /**
      * Minimum Joomla version required to install the extension
      *
      * @var  string
      */
-	protected $minimumJoomla = '4.1.0';
+	protected $minimumJoomla = '4.3.0';
 
     /**
      * Runs right before any installation action

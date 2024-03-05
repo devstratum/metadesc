@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Metadesc
- * @version         1.54.2
+ * @version         1.55.2
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -130,17 +130,19 @@ Text::script('COM_METADESC_FIELD_DESCRIPTION_COUNT');
                                             </button>
                                         </div>
                                         <div class="metadesc-control__item">
-                                            <?php $badge_color = $item_params->{'menu-meta_description'} ? 'bg-success' : 'bg-danger'; ?>
-                                            <?php $desc_count = mb_strlen($item_params->{'menu-meta_description'}); ?>
+                                            <?php $menu_meta_description = ''; ?>
+                                            <?php if (isset($item_params->{'menu-meta_description'})) $menu_meta_description = (string) $item_params->{'menu-meta_description'}; ?>
+                                            <?php $badge_color = $menu_meta_description ? 'bg-success' : 'bg-danger'; ?>
+                                            <?php $desc_count = mb_strlen($menu_meta_description); ?>
                                             <span class="metadesc-badge badge <?php echo $badge_color; ?>"><?php echo Text::_('COM_METADESC_HEADING_DESCRIPTION'); ?></span>
                                             <span class="metadesc-count badge bg-info"><?php echo $desc_count; ?></span>
                                         </div>
                                     </div>
 
-                                    <?php $item_params->{'menu-meta_description'} ? $class_descr = '' : $class_descr = ' hidden'; ?>
+                                    <?php $menu_meta_description ? $class_descr = '' : $class_descr = ' hidden'; ?>
                                     <div class="metadesc-description<?php echo $class_descr; ?>">
                                         <span class="icon icon-check-circle"></span>
-                                        <span class="text"><?php echo $item_params->{'menu-meta_description'}; ?></span>
+                                        <span class="text"><?php echo $menu_meta_description; ?></span>
                                     </div>
                                 </td>
                                 <?php if (Multilanguage::isEnabled()) : ?>

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Metadesc
- * @version         1.54.2
+ * @version         1.55.2
  * @author          Sergey Osipov <info@devstratum.ru>
  * @website         https://devstratum.ru
  * @copyright       Copyright (c) 2022 Sergey Osipov. All Rights Reserved
@@ -16,7 +16,6 @@ use Joomla\CMS\Language\Text;
 ?>
 
 <div class="metadesc-footer text-center">
-    <p><a href="https://pay.cloudtips.ru/p/1daecc1f" target="_blank" class="btn btn-primary"><?php echo Text::_('COM_METADESC_DONATE'); ?></a></p>
     <p><a href="https://extensions.joomla.org/extension/metadesc" target="_blank"><?php echo Text::_('COM_METADESC_LIKE'); ?></a></p>
-    <p class="small">© 2022 Sergey Osipov. All Rights Reserved</p>
+    <p><a href="https://pay.cloudtips.ru/p/1daecc1f" target="_blank" class="btn btn-primary"><?php echo Text::_('COM_METADESC_DONATE'); ?></a></p>
 </div>
